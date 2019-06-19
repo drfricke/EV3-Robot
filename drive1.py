@@ -8,9 +8,11 @@ import ev3dev.ev3 as ev3
 from time import sleep
 
 # Define motor outputs
-motor_left_A = ev3.LargeMotor('outB')
-motor_left_B = ev3.LargeMotor('outC')
-speed = 50 # Set Speed
+motor_left_B = ev3.LargeMotor('outB')
+motor_left_C = ev3.LargeMotor('outC')
+motor_right_A = ev3.LargeMotor('outA')
+motor_right_D = ev3.LargeMotor('outD')
+speed = 90 # Set Speed
 
 # Initiate keybaord inputs
 def getch():
@@ -23,21 +25,36 @@ def getch():
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     return ch
 
-def forward():
-   motor_left.run_direct(duty_cycle_sp=speed)
-   motor_right.run_direct(duty_cycle_sp=speed)
 def back():
-   motor_left.run_direct(duty_cycle_sp=-speed)
-   motor_right.run_direct(duty_cycle_sp=-speed)
-def left():
-   motor_left.run_direct( duty_cycle_sp=-speed)
-   motor_right.run_direct( duty_cycle_sp=speed)
+   motor_left_B.run_direct(duty_cycle_sp=speed)
+   motor_left_C.run_direct(duty_cycle_sp=speed)
+   motor_right_A.run_direct(duty_cycle_sp=speed)
+   motor_right_D.run_direct(duty_cycle_sp=speed)
+   
+def forward():
+    motor_left_B.run_direct(duty_cycle_sp=-speed)
+    motor_left_C.run_direct(duty_cycle_sp=-speed)
+    motor_right_A.run_direct(duty_cycle_sp=-speed)
+    motor_right_D.run_direct(duty_cycle_sp=-speed)
+	
 def right():
-   motor_left.run_direct( duty_cycle_sp=speed)
-   motor_right.run_direct( duty_cycle_sp=-speed)
+   motor_left_B.run_direct(duty_cycle_sp=-speed)
+   motor_left_C.run_direct(duty_cycle_sp=-speed)
+   motor_right_A.run_direct(duty_cycle_sp=speed)
+   motor_right_D.run_direct(duty_cycle_sp=speed)
+   
+def left():
+   motor_left_B.run_direct(duty_cycle_sp=speed)
+   motor_left_C.run_direct(duty_cycle_sp=speed)
+   motor_right_A.run_direct(duty_cycle_sp=-speed)
+   motor_right_D.run_direct(duty_cycle_sp=-speed)
+   
 def stop():
-   motor_left.run_direct( duty_cycle_sp=0)
-   motor_right.run_direct( duty_cycle_sp=-0)
+    motor_left_B.run_direct(duty_cycle_sp=0)
+    motor_left_C.run_direct(duty_cycle_sp=0)
+    motor_right_A.run_direct(duty_cycle_sp=0)
+    motor_right_D.run_direct(duty_cycle_sp=0)
+   
 def red():
     ev3.Leds.set_color(ev3.Leds.LEFT, ev3.Leds.RED)
     sleep(0.01)
