@@ -9,7 +9,7 @@ Open desired file. File c.py is the most up-to-date file to use for experiments 
 
 # Using file c.py
 
-'w' - Enters the selected PWM
+'w' - Enter the selected PWM
 
 'h' - Full Forward
 
@@ -19,7 +19,7 @@ Open desired file. File c.py is the most up-to-date file to use for experiments 
 
 
 
-'p' - custom increases PWM by 10. 0 = Full Reverse. ~60 = stop. 100 = Full Forward.
+'p' - custom increases PWM by 10. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
 
 'o' - custom decreases PWM by 10.
 
