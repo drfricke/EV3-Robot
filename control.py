@@ -44,7 +44,7 @@ while True:
       speed[1] = i
       gearA = [1]
       print(speed[1], 'Motor A')
-      if char == 'o':
+   if char == 'o':
       i = i - 5
       if i < 0:
           i = 0
@@ -60,7 +60,7 @@ while True:
       speed[2] = n
       gearB = [2]
       print(speed[2], 'Motor B')
-      if char == 'k':
+   if char == 'k':
       n = n - 5
       if n < 0:
           n = 0
