@@ -6,9 +6,9 @@ import serial
 motor_right_A = ev3.LargeMotor('outA')
 motor_right_B = ev3.LargeMotor('outB')
 
-speed = [0, 55, 100, 0, 0] # Set Speed
-gearA = [2]
-gearB = [2]
+speed = [50, 0, 0] # Set Speed
+gearA = [1]
+gearB = [1]
 i = 50
 n = 50
 
@@ -24,6 +24,10 @@ def getch():
 
 def forward():
     motor_right_A.run_direct(duty_cycle_sp=speed[gearA[0]])
+    motor_right_B.run_direct(duty_cycle_sp=speed[gearB[0]])
+
+def stop():
+    motor_right_A.run_direct(duty_cycle_sp=50)
     motor_right_B.run_direct(duty_cycle_sp=50)
 
 print("-----------Connection Initiated-----------")
@@ -32,46 +36,38 @@ while True:
    if char == 'w':
       forward()
       print("Drive")
-   if char == 'h':
-      gearA = [2]
-      gearB = [2]
-      print('Full Forward')
    if char == 'p':
       i = i + 5
       if i > 100:
           i = 100
           print('Outside driver range, PWM overridden to 100')
-      speed[3] = i
-      gearA = [3]
-      print(speed[3], 'Motor A')
+      speed[1] = i
+      gearA = [1]
+      print(speed[1], 'Motor A')
       if char == 'o':
       i = i - 5
       if i < 0:
           i = 0
           print('Outside driver range, PWM overridden to 0')
-      speed[3] = i
-      gearA = [3]
-      print(speed[3],' Motor A')
-   if char == 'm':
+      speed[1] = i
       gearA = [1]
-      gearB = [1]
-      print('Stop')
+      print(speed[1],' Motor A')
    if char == 'l':
       n = n + 5
       if n > 100:
           n = 100
           print('Outside driver range, PWM overridden to 100')
-      speed[4] = n
-      gearB = [4]
-      print(speed[4], 'Motor B')
+      speed[2] = n
+      gearB = [2]
+      print(speed[2], 'Motor B')
       if char == 'k':
       n = n - 5
       if n < 0:
           n = 0
           print('Outside driver range, PWM overridden to 0')
-      speed[4] = n
-      gearB = [4]
-      print(speed[4], 'Motor B')
+      speed[2] = n
+      gearB = [2]
+      print(speed[2], 'Motor B')
    if char == ' ':
       stop()
    if char == 'q':
