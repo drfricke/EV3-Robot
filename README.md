@@ -24,3 +24,19 @@ Open desired file. File c.py is the most up-to-date file to use for experiments 
 'o' - custom decreases PWM by 10.
 
 ' ' - stop
+
+
+# Using file control.py
+
+'w' - Enter the selected PWM
+
+
+'p' - custom increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
+
+'o' - custom decreases PWM by 5.
+
+'l' - custom increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
+
+'k' - custom decreases PWM by 5.
+
+' ' - stop
