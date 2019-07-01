@@ -5,9 +5,9 @@ import serial
 
 motor_right_A = ev3.LargeMotor('outA')
 
-speed = [0, 55, 100, 0] # Set Speed
-gear = [2]
-i = 60
+speed = [0, 50, 100, 0] # Set Speeds
+gear = [2] #indexes Speeds
+i = 50
 
 def getch():
     fd = sys.stdin.fileno()
@@ -23,7 +23,7 @@ def forward():
     motor_right_A.run_direct(duty_cycle_sp=speed[gear[0]])
 
 def stop():
-    motor_right_A.run_direct(duty_cycle_sp=55)
+    motor_right_A.run_direct(duty_cycle_sp=50)
 
 print("-----------Connection Initiated-----------")
 while True:
@@ -36,7 +36,7 @@ while True:
       print('Full Forward')
    if char == 'p':
       i = i + 10
-      if i >= 100:
+      if i > 100:
           i = 100
           print('Outside driver range, PWM overridden to 100')
       speed[3] = i
@@ -44,7 +44,7 @@ while True:
       print(speed[3])
    if char == 'o':
       i = i - 10
-      if i <= 0:
+      if i < 0:
           i = 0
           print('Outside driver range, PWM overridden to 0')
       speed[3] = i
