@@ -7,8 +7,8 @@ motor_right_A = ev3.LargeMotor('outA')
 motor_right_B = ev3.LargeMotor('outB')
 
 speed = [50, 0, 0] # Set Speed
-gearA = [1]
-gearB = [1]
+gearA = [0]
+gearB = [0]
 i = 50
 n = 50
 
