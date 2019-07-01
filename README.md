@@ -30,13 +30,12 @@ Open desired file. File c.py is the most up-to-date file to use for experiments 
 
 'w' - Enter the selected PWM
 
+'p' - Increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
 
-'p' - custom increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
+'o' - Decreases PWM by 5.
 
-'o' - custom decreases PWM by 5.
+'l' - Increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
 
-'l' - custom increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
-
-'k' - custom decreases PWM by 5.
+'k' - Decreases PWM by 5.
 
 ' ' - stop
