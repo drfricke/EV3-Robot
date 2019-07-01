@@ -6,6 +6,8 @@ In terminal (Mac) create a ssh connection with deired EV3. (ssh robot@ - ip addr
 
 Open desired file. File c.py is the most up-to-date file to use for experiments (06/19/19). (ex. 'python3 c.py')
 
+To upload a file from your computer to the EV3. Create a sftp (sftp robot@...) connection with the EV3 and use the 'put' command.
+
 
 # Using file c.py
 
