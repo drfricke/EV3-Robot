@@ -39,10 +39,6 @@ To upload a file from your computer to the EV3. Create a sftp (sftp robot@...) c
 
 'o' - Decreases PWM by 5.
 
-'l' - Increases PWM by 5. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
-
-'k' - Decreases PWM by 5.
-
 'm' - Give current RPS
 
 ' ' - stop
