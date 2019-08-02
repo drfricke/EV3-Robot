@@ -21,20 +21,21 @@ ts1 = TouchSensor('in1') # functions as brake
 ts2 = TouchSensor('in2') # ends program
 motor_C.run_direct(duty_cycle_sp=100) #turns on relay
 
+def stop():
+        motor_A.run_direct(duty_cycle_sp=50)
+        motor_B.run_direct(duty_cycle_sp=50)
 
 print('start')
 
 try:
         while True:
-                motor_A.run_direct(duty_cycle_sp=50)
-                motor_B.run_direct(duty_cycle_sp=50)
+                stop()
                 while ts1.is_pressed:
                         if 3 > motor_C.position > -3:
                                 left[0] = 1
                                 right[0] = 1
                                 if 10 > motor_D.position > -10:
-                                        motor_A.run_direct(duty_cycle_sp=50)
-                                        motor_B.run_direct(duty_cycle_sp=50)
+                                        stop()
                                 elif 49 > motor_D.position > 10:
                                         motor_A.run_direct(duty_cycle_sp=left[0]*(motor_D.position+50))
                                         motor_B.run_direct(duty_cycle_sp=right[0]*(motor_D.position+50))
@@ -51,8 +52,7 @@ try:
                                 left[0] = (1 - (motor_C.position/80))
                                 right[0] = 1
                                 if 10 > motor_D.position > -10:
-                                        motor_A.run_direct(duty_cycle_sp=50)
-                                        motor_B.run_direct(duty_cycle_sp=50)
+                                        stop()
                                 elif 49 > motor_D.position > 10:
                                         motor_A.run_direct(duty_cycle_sp=left[0]*(motor_D.position+50))
                                         motor_B.run_direct(duty_cycle_sp=right[0]*(motor_D.position+50))
@@ -69,8 +69,7 @@ try:
                                 left[0] = 1
                                 right[0] = (1 + motor_C.position/80)
                                 if 10 > motor_D.position > -10:
-                                        motor_A.run_direct(duty_cycle_sp=50)
-                                        motor_B.run_direct(duty_cycle_sp=50)
+                                        stop()
                                 elif 49 > motor_D.position > 10:
                                         motor_A.run_direct(duty_cycle_sp=left[0]*(motor_D.position+50))
                                         motor_B.run_direct(duty_cycle_sp=right[0]*(motor_D.position+50))
@@ -84,14 +83,12 @@ try:
                                         motor_A.run_direct(duty_cycle_sp=0)
                                         motor_B.run_direct(duty_cycle_sp=0)
                 if ts2.is_pressed:
-                        print('close')
-                        motor_A.run_direct(duty_cycle_sp=50)
-                        motor_B.run_direct(duty_cycle_sp=50)
+                        print('closed')
+                        stop()
                         motor_C.run_direct(duty_cycle_sp=0) relay off
                         exit()
 except:     # in case of any strange errors
         print('END.')
-        motor_A.run_direct(duty_cycle_sp=50)
-        motor_B.run_direct(duty_cycle_sp=50)
+        stop()
         motor_C.run_direct(duty_cycle_sp=0) #relay off
         exit()
