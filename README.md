@@ -47,7 +47,7 @@ To upload a file from your computer to the EV3. Create a sftp (sftp robot@...) c
 
 This program is controlled with the interface on the rover.
 
-The steering wheel is supposed to control steering, however the motors aren't pwerful enough for this to work.
+The steering wheel is supposed to control steering, however the motors aren't powerful enough for this to work.
 
 The lever controls speed. Make sure to have in upright position before program starts. The touch botton on top functions as a dead man switch, when released the rover will stop and when held down the rover will move according to the levers change in position from the starting location.
 
