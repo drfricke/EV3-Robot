@@ -9,25 +9,6 @@ Open desired file. File c.py is the most up-to-date file to use for experiments 
 To upload a file from your computer to the EV3. Create a sftp (sftp robot@...) connection with the EV3 and use the 'put' command.
 
 
-# Using file c.py
-
-'w' - Enter the selected PWM
-
-'h' - Full Forward
-
-'l' - Full Reverse
-
-'m' - Stop
-
-
-
-'p' - custom increases PWM by 10. 0 = Full Reverse. ~50 = stop. 100 = Full Forward.
-
-'o' - custom decreases PWM by 10.
-
-' ' - stop
-
-
 # Using file control.py
 
 'w' - Enter the selected PWM
@@ -41,3 +22,6 @@ To upload a file from your computer to the EV3. Create a sftp (sftp robot@...) c
 'k' - Decreases PWM by 5.
 
 ' ' - stop
+
+# Using file Remote_Drive.py
+
