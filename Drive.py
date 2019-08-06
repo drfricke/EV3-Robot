@@ -85,7 +85,7 @@ try:
                 if ts2.is_pressed:
                         print('closed')
                         stop()
-                        motor_C.run_direct(duty_cycle_sp=0) relay off
+                        motor_C.run_direct(duty_cycle_sp=0) #relay off
                         exit()
 except:     # in case of any strange errors
         print('END.')
